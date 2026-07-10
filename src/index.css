@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5F7FA;
+  color: #1B2333;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.dark body {
+  background-color: #090E1A;
+  color: #E7ECF5;
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+html.dark .glass {
+  background: rgba(18, 27, 46, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: #38BDF8;
+  color: #090E1A;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38BDF8, #FBBF24);
+  border-radius: 8px;
+}
+
+/* ---------- Focus visibility (accessibility) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #38BDF8;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Section eyebrow divider ---------- */
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.2em;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
