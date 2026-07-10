@@ -14,9 +14,9 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-visible pt-28 pb-16"
+      className="relative flex min-h-screen items-center overflow-visible pt-24 pb-14 sm:pt-28 lg:pt-32"
     >
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 px-5 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
         {/* Text column */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
             {profile.tagline}
           </span>
 
-          <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-slate-deep dark:text-ink sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-display text-[2.3rem] font-bold leading-tight text-slate-deep dark:text-ink sm:text-5xl lg:text-6xl">
             Hi, I'm {profile.name}
           </h1>
 
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             {profile.summary}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={profile.resumeFile}
               download
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="flex h-11 w-11 items-center justify-center rounded-full glass text-slate-deep transition-transform hover:-translate-y-1 hover:text-signal-dim dark:text-ink dark:hover:text-signal"
+              className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full glass text-slate-deep transition-transform hover:-translate-y-1 hover:text-signal-dim dark:text-ink dark:hover:text-signal"
             >
               <Github size={18} />
             </a>
@@ -80,14 +80,14 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="flex h-11 w-11 items-center justify-center rounded-full glass text-slate-deep transition-transform hover:-translate-y-1 hover:text-signal-dim dark:text-ink dark:hover:text-signal"
+              className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full glass text-slate-deep transition-transform hover:-translate-y-1 hover:text-signal-dim dark:text-ink dark:hover:text-signal"
             >
               <Linkedin size={18} />
             </a>
             <a
               href={`mailto:${profile.email}`}
               aria-label="Send email"
-              className="flex h-11 w-11 items-center justify-center rounded-full glass text-slate-deep transition-transform hover:-translate-y-1 hover:text-signal-dim dark:text-ink dark:hover:text-signal"
+              className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full glass text-slate-deep transition-transform hover:-translate-y-1 hover:text-signal-dim dark:text-ink dark:hover:text-signal"
             >
               <Mail size={18} />
             </a>
@@ -119,25 +119,25 @@ const Hero: React.FC = () => {
 
           {/* Floating tech chips */}
           <motion.div
-  className="absolute bottom-8 left-8 z-30 flex h-12 w-12 items-center justify-center rounded-xl glass shadow-glass"
+  className="absolute bottom-8 left-8 z-30 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl glass shadow-glass"
   animate={{ y: [0, -8, 0] }}
   transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
 >
-  <FaJava size={22} />
+  <FaJava size={20} />
 </motion.div>
          <motion.div
   className="absolute left-0 top-10 z-30 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-xl glass shadow-glass"
   animate={{ y: [0, -10, 0] }}
   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
 >
-  <SiPython size={22} />
+  <SiPython size={20} />
 </motion.div>
          <motion.div
   className="absolute right-0 top-1/2 z-30 flex h-12 w-12 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl glass shadow-glass"
   animate={{ y: [0, 10, 0] }}
   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
 >
-  <FaDatabase size={20} />
+  <FaDatabase size={18} />
 </motion.div>
         </motion.div>
       </div>
